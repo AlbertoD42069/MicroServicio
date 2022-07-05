@@ -6,17 +6,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "tabla_general_marca_auto")
 public class ModeloDatosMarcas {
 	
-	//private ModeloDatosModelos datos_modelos;
 	private int id;
 	private String pais_Origen;
 	private String calificacion;
 	private String descripcion;
 	private String nombre;
+	//private ModeloDatosModelos detalles;
+
 	
 	public ModeloDatosMarcas() {
 		
@@ -25,6 +29,7 @@ public class ModeloDatosMarcas {
 	public ModeloDatosMarcas(int id, String nombre, String pais_Origen,
 			String calificacion, String descripcion) {
 		super();
+		//this.detalles = detalles;
 		//this.datos_modelos = datos_modelos;
 		this.id = id;
 		this.nombre = nombre;
@@ -83,6 +88,14 @@ public class ModeloDatosMarcas {
 		this.id = id;
 	}
 	
+	//public ModeloDatosModelos getDetalles() {
+		//return detalles;
+	//}
+
+	//public void setDetalles(ModeloDatosModelos detalles) {
+		//this.detalles = detalles;
+	//}
+
 	@Override
 	public String toString() {
 	    return "ModeloDatosMarcas {" +
@@ -90,7 +103,7 @@ public class ModeloDatosMarcas {
 	        "nombre='" + nombre + '\'' +
 	        "pais_Origen='" + pais_Origen + '\'' + 
 	        "calificacion='" + calificacion + '\''+
-	        "descripcion='" + descripcion + '\''+      
+	        "descripcion='" + descripcion + '\''+  
 	        '}';
 	  }
 	

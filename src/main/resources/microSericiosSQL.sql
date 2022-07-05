@@ -1,20 +1,20 @@
 CREATE DATABASE automovil;
 CREATE TABLE tabla_general_marca_auto(
-	id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+	id  SERIAL NOT NULL  PRIMARY KEY, 
 	nombre VARCHAR(50) UNIQUE,
 	pais_Origen VARCHAR(50) NOT NULL,
 	calificacion VARCHAR(50) NOT NULL,
-	descripcion VARCHAR(50) NOT NULL
-	);
+	descripcion VARCHAR(50) NOT NULL,
+	detalles VARCHAR(50) NOT NULL	);
 	
 CREATE TABLE tabla_detalles_modelo_auto(
- 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ 	id SERIAL NOT NULL PRIMARY KEY,
  	marca VARCHAR(50) UNIQUE,
  	modelo VARCHAR(50) UNIQUE,
  	calificacion VARCHAR(50) NOT NULL,
  	precio VARCHAR(50) NOT NULL,
  	estatus VARCHAR(50) NOT NULL
-);
+ 	);
 
 
 -- SELECT * FROM tabla_general_marca_auto

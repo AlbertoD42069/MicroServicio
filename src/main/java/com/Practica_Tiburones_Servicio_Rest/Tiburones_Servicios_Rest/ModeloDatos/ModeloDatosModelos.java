@@ -6,7 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "tabla_detalles_modelo_auto")
 public class ModeloDatosModelos {
 	
@@ -83,7 +86,7 @@ public class ModeloDatosModelos {
 	
 	@Override
 	public String toString() {
-		return "Modelos {" +
+		return "ModeloDatosModelos {" +
 	"id=" + id +
 	", marca=" + marca + 	'\'' + 
 	", modelo=" + modelo + '\'' +
